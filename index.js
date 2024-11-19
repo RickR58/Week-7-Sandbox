@@ -52,3 +52,79 @@ ${street}
 //In JavaScript, this information could be printed using console.log() and string concatenation, but using console.log() and template literals provides a much easier way to do so.
 
 //Arrow FUnctions aka Fat Arrows =>
+const createFullName = (honorific, firstName, lastName) =>
+  `${honorific} ${firstName} ${lastName}`;
+console.log(createFullName("Today's", "Tom", "Sawyer"));
+
+const someFunction = (a, b) => {
+  let result = "";
+  for (let i = 0; i < b; i++) {
+    result += a;
+  }
+  return result;
+};
+console.log(someFunction("Hello ", 12));
+
+function power(base, exponent) {
+  //This example is shown in the next coe
+  return base ** exponent;
+}
+
+//-------------------------------
+
+const powerFunction = (base, exp) => {
+  return base ** exp;
+};
+console.log(powerFunction(2, 2));
+console.log(powerFunction(4, 2));
+console.log(powerFunction(2, 4));
+//-------------------------------
+
+const powder = (base, exp) => {
+  let result = 1;
+  for (let count = 0; count < exp; count++) {
+    result *= base;
+  }
+  return result;
+};
+
+console.log(powder(2, 10));
+console.log(powder(4, 2));
+console.log(powder(5, 7));
+
+//------------------------------- Callbacks
+//let username = sentHttpRequest("getUser");
+//console.log(username);
+
+//-------------------- Promises. An object that says do something if the call was sucessful
+/* function handleEvent(value) {
+  console.log(value);
+}
+
+function handleError(err) {
+  console.error(err);
+}
+doSomethingThatReturnsAPromise().then(handleEvent).catch(handleError);
+*/
+
+const booleanFlag = false;
+let trueOrFalse = new Promise((resolve, reject) => {
+if (booleanFlag) {
+resolve("The flag is true!");
+} else {
+reject("The flag is false!");
+}
+});
+// This will print out the promise that you've just declared
+console.log(trueOrFalse);
+
+trueOrFalse
+.then(function successValue(result) {
+console.log(result);
+})
+.then(function successValue2() {
+console.log("You can call multiple functions this way.");
+})
+.catch(function failureValue(reject) {
+console.log(reject);
+});
